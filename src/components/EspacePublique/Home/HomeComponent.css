@@ -1,0 +1,28 @@
+/* Simplified main page styles - flat and beginner-friendly */
+
+.intro-section {
+  background: var(--bg);
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  text-align: center;
+  color: var(--muted);
+}
+
+.intro-text { max-width: 800px; }
+.intro-text h1 { font-size: 2.25rem; margin-bottom: 0.75rem; }
+.intro-text p { font-size: 1rem; color: var(--muted-2); margin-bottom: 1.25rem; }
+
+.presentation-section { padding: 2.5rem 1rem; background: var(--bg); }
+.presentation-image { width: 100%; border-radius: var(--radius); box-shadow: var(--shadow-sm); }
+
+.categories-section { padding: 2.5rem 1rem; background: var(--bg); text-align: center; }
+.category-card { border-radius: var(--radius); background: var(--card-bg); border: 1px solid var(--border); padding: 1rem; }
+.category-image { height: 160px; object-fit: cover; width: 100%; border-radius: 6px; }
+
+.category-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-1); }
+
+/* Arabic support */
+html[lang="ar"] { direction: rtl; }
