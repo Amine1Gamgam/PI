@@ -605,6 +605,89 @@ const ModernLandingPage = () => {
           </div>
         </div>
       </section>
+{/* Testimonials Section */}
+<section style={styles.sectionAlt}>
+  <div style={styles.container}>
+    <div style={styles.sectionHeader}>
+      <span style={styles.sectionLabel}>Témoignages</span>
+      <h2 style={styles.sectionTitle}>Ce que nos clients disent</h2>
+      <p style={styles.sectionSubtitle}>
+        Nos freelances et clients partagent leur expérience avec notre plateforme
+      </p>
+    </div>
+
+    <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '30px'}}>
+      {[
+        {
+          name: 'Ali B.',
+          role: 'Freelance',
+          feedback: 'Grâce à cette plateforme, j’ai pu collaborer avec plusieurs clients et augmenter mes revenus.',
+          rating: 4,
+          avatar: 'https://randomuser.me/api/portraits/men/52.jpg'
+        },
+        {
+          name: 'Nadia R.',
+          role: 'Client',
+          feedback: 'Très simple et efficace, je recommande à tous mes collègues.',
+          rating: 5,
+          avatar: 'https://randomuser.me/api/portraits/women/44.jpg'
+        },
+        {
+          name: 'Karim L.',
+          role: 'Freelance',
+          feedback: 'Les projets sont variés et bien rémunérés. Une super expérience !',
+          rating: 5,
+          avatar: 'https://randomuser.me/api/portraits/men/34.jpg'
+        }
+      ].map((testimonial, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: index * 0.1 }}
+          style={{
+            backgroundColor: '#ffffff',
+            borderRadius: '20px',
+            padding: '30px 24px',
+            boxShadow: '0 20px 40px rgba(0,0,0,0.1)',
+            textAlign: 'center',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
+          {/* Avatar */}
+          <img 
+            src={testimonial.avatar} 
+            alt={testimonial.name} 
+            style={{width: '80px', height: '80px', borderRadius: '50%', marginBottom: '16px', objectFit: 'cover'}}
+          />
+          
+          {/* Feedback */}
+          <p style={{fontSize: '16px', color: '#64748b', lineHeight: '1.6', marginBottom: '20px'}}>
+            "{testimonial.feedback}"
+          </p>
+
+          {/* Name and role */}
+          <h4 style={{fontSize: '18px', fontWeight: '700', color: '#1e293b', marginBottom: '4px'}}>
+            {testimonial.name}
+          </h4>
+          <span style={{fontSize: '14px', color: '#6366f1', fontWeight: '600', marginBottom: '12px'}}>
+            {testimonial.role}
+          </span>
+
+          {/* Stars */}
+          <div style={{display: 'flex', gap: '4px'}}>
+            {Array.from({length: 5}, (_, i) => (
+              <span key={i} style={{color: i < testimonial.rating ? '#facc15' : '#e5e7eb', fontSize: '18px'}}>★</span>
+            ))}
+          </div>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* CTA Section */}
       <section style={styles.ctaSection}>
@@ -626,6 +709,7 @@ const ModernLandingPage = () => {
           </div>
         </div>
       </section>
+      
     </div>
   );
 };
